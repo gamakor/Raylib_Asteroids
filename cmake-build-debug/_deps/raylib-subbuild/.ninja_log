@@ -1,0 +1,21 @@
+# ninja log v6
+1	10	1739145387727827927	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	d9bde0fdf052c0ef
+1	10	1739145387727827927	/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	d9bde0fdf052c0ef
+10	162687	1739145550405969726	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	76083bbbdd99e6ef
+10	162687	1739145550405969726	/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	76083bbbdd99e6ef
+162687	164044	1739145550405969726	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	bc87dba7ce2e0bd7
+162687	164044	1739145550405969726	/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	bc87dba7ce2e0bd7
+164044	164050	1739145551767971127	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	7d418415f202edee
+164044	164050	1739145551767971127	/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	7d418415f202edee
+164050	164056	1739145551773971133	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	1085dd21c2abf4e8
+164050	164056	1739145551773971133	/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	1085dd21c2abf4e8
+164056	164062	1739145551780971141	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	1c79eeb084396bf5
+164056	164062	1739145551780971141	/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	1c79eeb084396bf5
+164062	164069	1739145551786971147	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	77d6821a116e933e
+164062	164069	1739145551786971147	/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	77d6821a116e933e
+164069	164075	1739145551793971154	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	879f15e7b23909e5
+164069	164075	1739145551793971154	/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	879f15e7b23909e5
+164075	164084	1739145551802971163	CMakeFiles/raylib-populate-complete	5960e09b1357f729
+164075	164084	1739145551802971163	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	5960e09b1357f729
+164075	164084	1739145551802971163	/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate-complete	5960e09b1357f729
+164075	164084	1739145551802971163	/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	5960e09b1357f729

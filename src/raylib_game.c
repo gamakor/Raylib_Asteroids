@@ -20,7 +20,9 @@
 
 #include <stdio.h>                          // Required for: printf()
 #include <stdlib.h>                         // Required for: 
-#include <string.h>                         // Required for: 
+#include <string.h>                         // Required for:
+
+#include "raymath.h"
 
 //----------------------------------------------------------------------------------
 // Defines and Macros
@@ -45,6 +47,32 @@ typedef enum {
 } GameScreen;
 
 // TODO: Define your custom data types here
+typedef struct {
+    Vector2 position;
+    Vector2 speed;
+    float rotation;
+    float acceleration;
+    int type;
+
+}sEntity;
+
+typedef enum {
+    TYPE_ASTEROID_SMALL = 0,
+    TYPE_ASTEROID_MED,
+    TYPE_ASTEROID_LARGE,
+    TYPE_PLAYER
+}EntityType;
+#define MAX_TEXTURES 4
+#define MAX_ASTEROIDS 20
+typedef enum {
+    TEXTURE_METEOR_SMALL = 0,
+    TEXTURE_METEOR_MED,
+    TEXTURE_METEOR_LARGE,
+    TEXTURE_PLAYER
+};
+
+
+Texture2D textures[MAX_TEXTURES];
 
 //----------------------------------------------------------------------------------
 // Global Variables Definition
@@ -55,11 +83,139 @@ static const int screenHeight = 450;
 static RenderTexture2D target = { 0 };  // Render texture to render our game
 
 // TODO: Define global variables here, recommended to make them static
+sEntity sPlayer = { 0 };
+sEntity sAsteroids[MAX_ASTEROIDS];
 
 //----------------------------------------------------------------------------------
 // Module Functions Declaration
 //----------------------------------------------------------------------------------
 static void UpdateDrawFrame(void);      // Update and Draw one frame
+void GameStartup(void);
+void GameUpdate(void);
+void GameRender(void);
+void GameShutdown(void);
+void GameReset(void);
+
+void GameStartUp(void) {
+
+    //Using this to set/reset game to default
+    Image image1 = LoadImage("resources/player.png");
+    textures[TEXTURE_PLAYER] =LoadTextureFromImage(image1);
+    UnloadImage(image1);
+
+    Image image2 = LoadImage("resources/small-a.png");
+    textures[TEXTURE_METEOR_SMALL] =LoadTextureFromImage(image2);
+    UnloadImage(image2);
+
+    Image image3 = LoadImage("resources/med-b.png");
+    textures[TEXTURE_METEOR_MED] =LoadTextureFromImage(image3);
+    UnloadImage(image3);
+
+    Image image4 = LoadImage("resources/big-a.png");
+    textures[TEXTURE_METEOR_LARGE] =LoadTextureFromImage(image4);
+    UnloadImage(image4);
+
+
+
+    GameReset();
+}
+void GameUpdate(void) {
+    if (IsKeyDown(KEY_A)) {
+        sPlayer.rotation -= 200.f *GetFrameTime();
+    }
+
+    if (IsKeyDown(KEY_D)) {
+        sPlayer.rotation +=  200.f *GetFrameTime();
+    }
+
+    sPlayer.speed.x = cosf(sPlayer.rotation*DEG2RAD) * 6.f;
+    sPlayer.speed.y = sinf(sPlayer.rotation*DEG2RAD) * 6.f;
+
+    if (IsKeyDown(KEY_W)) {
+        if (sPlayer.acceleration <50.f) {
+            sPlayer.acceleration += 0.04f;
+        }
+
+    }
+        sPlayer.position.x += (sPlayer.speed.x * sPlayer.acceleration) * GetFrameTime();
+        sPlayer.position.y += (sPlayer.speed.y * sPlayer.acceleration) * GetFrameTime();
+
+
+    // Player Wrapping around the screen.
+    if (sPlayer.position.x >GetScreenWidth()) {
+        sPlayer.position.x = sPlayer.position.x - GetScreenWidth();
+    } else if (sPlayer.position.x <0) {
+        sPlayer.position.x = GetScreenWidth();
+    }
+    if (sPlayer.position.y >GetScreenHeight()) {
+        sPlayer.position.y = sPlayer.position.y - GetScreenHeight();
+    }else if (sPlayer.position.y <0) {
+        sPlayer.position.y = GetScreenHeight();
+    }
+    //Update asteroids
+    for (int i = 0; i < MAX_ASTEROIDS; i++) {
+        sAsteroids[i].position.x += sAsteroids[i].speed.x * cosf(sAsteroids[i].rotation * DEG2RAD);
+        sAsteroids[i].position.y += sAsteroids[i].speed.y * sinf(sAsteroids[i].rotation * DEG2RAD);
+
+        if (sAsteroids[i].position.x >GetScreenWidth()) {
+            sAsteroids[i].position.x = sAsteroids[i].position.x - GetScreenWidth();
+        } else if (sAsteroids[i].position.x <0) {
+            sAsteroids[i].position.x = GetScreenWidth();
+        }
+        if (sAsteroids[i].position.y >GetScreenHeight()) {
+            sAsteroids[i].position.y = sAsteroids[i].position.y - GetScreenHeight();
+        }else if (sPlayer.position.y <0) {
+            sAsteroids[i].position.y = GetScreenHeight();
+        }
+    }
+
+}
+void GameRender(void) {
+    //draw the player
+    DrawTexturePro(textures[TEXTURE_PLAYER],
+        (Rectangle) { 0, 0, textures[TEXTURE_PLAYER].width, textures[TEXTURE_PLAYER].height },
+        (Rectangle) { sPlayer.position.x, sPlayer.position.y, textures[TEXTURE_PLAYER].width/2, textures[TEXTURE_PLAYER].height/2 },
+        (Vector2) {textures[TEXTURE_PLAYER].width/4,textures[TEXTURE_PLAYER].height/4},
+        sPlayer.rotation +90,
+        RAYWHITE);
+
+    //draw basic UI
+    DrawRectangle(5,5, 250, 100, Fade(SKYBLUE,.5f));
+    DrawRectangleLines(5,5,250,100,BLUE);
+
+    DrawText(TextFormat("- Player Position: (%06.1f,%06.1f)",sPlayer.position.x,sPlayer.position.y),15,30,10,YELLOW);
+    DrawText(TextFormat("- Player Rotation: (%06.1f)",sPlayer.rotation),15,45,10,YELLOW);
+
+    //draw asteroids
+
+    for (int i = 0; i < MAX_ASTEROIDS; ++i) {
+        DrawTexturePro(textures[sAsteroids[i].type],
+            (Rectangle){0, 0,textures[sAsteroids[i].type].width,textures[sAsteroids[i].type].height},
+            (Rectangle){sAsteroids[i].position.x,sAsteroids[i].position.y,textures[sAsteroids[i].type].width,textures[sAsteroids[i].type].height },
+            (Vector2){textures[sAsteroids[i].type].width/2,textures[sAsteroids[i].type].height/2},
+            sAsteroids[i].rotation,
+            RAYWHITE);
+    }
+}
+void GameShutdown(void) {
+    for (int i = 0; i < MAX_TEXTURES; i++) {
+        UnloadTexture(textures[i]);
+    }
+}
+void GameReset(void) {
+    sPlayer.position = (Vector2) { screenWidth/2, screenHeight/2};
+    sPlayer.speed = (Vector2) { 0, 0};
+    sPlayer.rotation = 0;
+    sPlayer.acceleration = 0;
+    sPlayer.type = TYPE_PLAYER;
+
+    for (int i = 0; i < MAX_ASTEROIDS; ++i) {
+        sAsteroids[i].rotation = (float)GetRandomValue(0, 360);
+        sAsteroids[i].position = (Vector2) {GetRandomValue(0,screenWidth), GetRandomValue(0,screenHeight)};
+        sAsteroids[i].type = GetRandomValue(TYPE_ASTEROID_SMALL,TYPE_ASTEROID_LARGE);
+        sAsteroids[i].speed = (Vector2) { (float)GetRandomValue(1,2),(float)GetRandomValue(1,2)};
+    }
+}
 
 //------------------------------------------------------------------------------------
 // Program main entry point
@@ -72,10 +228,11 @@ int main(void)
 
     // Initialization
     //--------------------------------------------------------------------------------------
-    InitWindow(screenWidth, screenHeight, "raylib gamejam template");
+    InitWindow(screenWidth, screenHeight, "Asteroids RL");
+
     
     // TODO: Load resources / Initialize variables at this point
-    
+    GameStartUp();
     // Render texture to draw full screen, enables screen scaling
     // NOTE: If screen is scaled, mouse input should be scaled proportionally
     target = LoadRenderTexture(screenWidth, screenHeight);
@@ -99,6 +256,7 @@ int main(void)
     UnloadRenderTexture(target);
     
     // TODO: Unload all loaded resources at this point
+    GameShutdown();
 
     CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
@@ -116,17 +274,19 @@ void UpdateDrawFrame(void)
     //----------------------------------------------------------------------------------
     // TODO: Update variables / Implement example logic at this point
     //----------------------------------------------------------------------------------
-
+    GameUpdate();
     // Draw
     //----------------------------------------------------------------------------------
     // Render game screen to a texture, 
     // it could be useful for scaling or further shader postprocessing
     BeginTextureMode(target);
-        ClearBackground(RAYWHITE);
+        ClearBackground(BLACK);
         
         // TODO: Draw your game screen here
-        DrawText("Welcome to raylib NEXT gamejam!", 150, 140, 30, BLACK);
-        DrawRectangleLinesEx((Rectangle){ 0, 0, screenWidth, screenHeight }, 16, BLACK);
+
+        GameRender();
+        //DrawText("Welcome to raylib NEXT gamejam!", 150, 140, 30, BLACK);
+       // DrawRectangleLinesEx((Rectangle){ 0, 0, screenWidth, screenHeight }, 16, BLACK);
         
     EndTextureMode();
     
