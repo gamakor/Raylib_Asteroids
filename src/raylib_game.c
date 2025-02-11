@@ -66,7 +66,7 @@ typedef enum {
 }EntityType;
 
 #define MAX_TEXTURES 4
-#define MAX_ASTEROIDS 20
+#define MAX_ASTEROIDS 1
 #define MAX_SHOTS 10
 #define MAX_SOUNDS 2
 
@@ -99,6 +99,7 @@ sEntity sAsteroids[MAX_ASTEROIDS];
 sEntity sShots[MAX_SHOTS];
 int asteroidScore = 0;
 int currentAsteroids = MAX_ASTEROIDS;
+bool isGameOver = false;
 
 //----------------------------------------------------------------------------------
 // Module Functions Declaration
@@ -138,6 +139,7 @@ void GameStartUp(void) {
     GameReset();
 }
 void GameUpdate(void) {
+
     if (IsKeyDown(KEY_A)) {
         sPlayer.rotation -= 200.f *GetFrameTime();
     }
@@ -172,7 +174,7 @@ void GameUpdate(void) {
     }
 
     //Spawn Shots
-    if (IsKeyPressed(KEY_LEFT_CONTROL)) {
+    if (IsKeyPressed(KEY_SPACE)) {
         for (int i = 0; i < MAX_SHOTS; i++) {
          if (!sShots[i].active) {
              sShots[i].active = true;
@@ -245,6 +247,10 @@ void GameUpdate(void) {
         }
     }
 
+    if (currentAsteroids < 1) {
+        isGameOver = true;
+    }
+
 }
 void GameRender(void) {
     //draw the player
@@ -263,6 +269,11 @@ void GameRender(void) {
     DrawText(TextFormat("- Player Position: (%06.1f,%06.1f)",sPlayer.position.x,sPlayer.position.y),15,30,10,YELLOW);
     DrawText(TextFormat("- Score: (%i)",asteroidScore),15,60,10,YELLOW);
     DrawText(TextFormat("- Current Asteroids: (%i)",currentAsteroids),15,75,10,YELLOW);
+
+    if (isGameOver) {
+        DrawText(TextFormat("Game Over"),screenWidth/2,screenHeight/2 ,30,YELLOW);
+
+    }
 
 
     //draw asteroids
@@ -302,6 +313,8 @@ void GameReset(void) {
     sPlayer.rotation = 0;
     sPlayer.acceleration = 0;
     sPlayer.type = TYPE_PLAYER;
+    asteroidScore = 0;
+    currentAsteroids = MAX_ASTEROIDS;
 
     for (int i = 0; i < MAX_ASTEROIDS; i++) {
         sAsteroids[i].rotation = (float)GetRandomValue(0, 360);
@@ -374,7 +387,10 @@ void UpdateDrawFrame(void)
     //----------------------------------------------------------------------------------
     // TODO: Update variables / Implement example logic at this point
     //----------------------------------------------------------------------------------
-    GameUpdate();
+    if (!isGameOver) {
+        GameUpdate();
+
+    }
     // Draw
     //----------------------------------------------------------------------------------
     // Render game screen to a texture, 
