@@ -175,18 +175,20 @@ void GameUpdate(void) {
     }
     //Update asteroids
     for (int i = 0; i < MAX_ASTEROIDS; i++) {
-        sAsteroids[i].position.x += sAsteroids[i].speed.x * cosf(sAsteroids[i].rotation * DEG2RAD);
-        sAsteroids[i].position.y += sAsteroids[i].speed.y * sinf(sAsteroids[i].rotation * DEG2RAD);
+        if (sAsteroids[i].active) {
+            sAsteroids[i].position.x += sAsteroids[i].speed.x * cosf(sAsteroids[i].rotation * DEG2RAD);
+            sAsteroids[i].position.y += sAsteroids[i].speed.y * sinf(sAsteroids[i].rotation * DEG2RAD);
 
-        if (sAsteroids[i].position.x >GetScreenWidth()) {
-            sAsteroids[i].position.x = sAsteroids[i].position.x - GetScreenWidth();
-        } else if (sAsteroids[i].position.x <0) {
-            sAsteroids[i].position.x = GetScreenWidth();
-        }
-        if (sAsteroids[i].position.y >GetScreenHeight()) {
-            sAsteroids[i].position.y = sAsteroids[i].position.y - GetScreenHeight();
-        }else if (sPlayer.position.y <0) {
-            sAsteroids[i].position.y = GetScreenHeight();
+            if (sAsteroids[i].position.x >GetScreenWidth()) {
+                sAsteroids[i].position.x = sAsteroids[i].position.x - GetScreenWidth();
+            } else if (sAsteroids[i].position.x <0) {
+                sAsteroids[i].position.x = GetScreenWidth();
+            }
+            if (sAsteroids[i].position.y >GetScreenHeight()) {
+                sAsteroids[i].position.y = sAsteroids[i].position.y - GetScreenHeight();
+            }else if (sPlayer.position.y <0) {
+                sAsteroids[i].position.y = GetScreenHeight();
+            }
         }
     }
 
@@ -204,6 +206,22 @@ void GameUpdate(void) {
                 sShots[i].active = false;
             }
 
+        }
+    }
+
+    //Collision between shots and asteroids
+    for (int i = 0; i < MAX_SHOTS; i++) {
+        if (sShots[i].active ) {
+            for (int j = 0; j < MAX_ASTEROIDS; j++) {
+                if (sAsteroids[j].active) {
+                    float texWidth = textures[sAsteroids[j].type].width;
+                    if (CheckCollisionCircles(sShots[i].position,2.f,sAsteroids[j].position,texWidth/2)){
+                        //Collision
+                        sAsteroids[j].active = false;
+                        sShots[i].active = false;
+                    }
+                }
+            }
         }
     }
 
@@ -227,12 +245,14 @@ void GameRender(void) {
     //draw asteroids
 
     for (int i = 0; i < MAX_ASTEROIDS; i++) {
-        DrawTexturePro(textures[sAsteroids[i].type],
-            (Rectangle){0, 0,textures[sAsteroids[i].type].width,textures[sAsteroids[i].type].height},
-            (Rectangle){sAsteroids[i].position.x,sAsteroids[i].position.y,textures[sAsteroids[i].type].width,textures[sAsteroids[i].type].height },
-            (Vector2){textures[sAsteroids[i].type].width/2,textures[sAsteroids[i].type].height/2},
-            sAsteroids[i].rotation,
-            RAYWHITE);
+        if (sAsteroids[i].active) {
+            DrawTexturePro(textures[sAsteroids[i].type],
+                (Rectangle){0, 0,textures[sAsteroids[i].type].width,textures[sAsteroids[i].type].height},
+                (Rectangle){sAsteroids[i].position.x,sAsteroids[i].position.y,textures[sAsteroids[i].type].width,textures[sAsteroids[i].type].height },
+                (Vector2){textures[sAsteroids[i].type].width/2,textures[sAsteroids[i].type].height/2},
+                sAsteroids[i].rotation,
+                RAYWHITE);
+        }
     }
 
     //draw shots
@@ -259,6 +279,7 @@ void GameReset(void) {
         sAsteroids[i].position = (Vector2) {GetRandomValue(0,screenWidth), GetRandomValue(0,screenHeight)};
         sAsteroids[i].type = GetRandomValue(TYPE_ASTEROID_SMALL,TYPE_ASTEROID_LARGE);
         sAsteroids[i].speed = (Vector2) { (float)GetRandomValue(1,2),(float)GetRandomValue(1,2)};
+        sAsteroids[i].active = true;
     }
 
     for (int i = 0; i < MAX_SHOTS; i++) {
