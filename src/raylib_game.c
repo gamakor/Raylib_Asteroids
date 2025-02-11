@@ -53,6 +53,7 @@ typedef struct {
     float rotation;
     float acceleration;
     int type;
+    bool active;
 
 }sEntity;
 
@@ -60,10 +61,14 @@ typedef enum {
     TYPE_ASTEROID_SMALL = 0,
     TYPE_ASTEROID_MED,
     TYPE_ASTEROID_LARGE,
-    TYPE_PLAYER
+    TYPE_PLAYER,
+    TYPE_SHOT
 }EntityType;
+
 #define MAX_TEXTURES 4
 #define MAX_ASTEROIDS 20
+#define MAX_SHOTS 10
+
 typedef enum {
     TEXTURE_METEOR_SMALL = 0,
     TEXTURE_METEOR_MED,
@@ -85,6 +90,7 @@ static RenderTexture2D target = { 0 };  // Render texture to render our game
 // TODO: Define global variables here, recommended to make them static
 sEntity sPlayer = { 0 };
 sEntity sAsteroids[MAX_ASTEROIDS];
+sEntity sShots[MAX_SHOTS];
 
 //----------------------------------------------------------------------------------
 // Module Functions Declaration
@@ -152,6 +158,21 @@ void GameUpdate(void) {
     }else if (sPlayer.position.y <0) {
         sPlayer.position.y = GetScreenHeight();
     }
+
+    //Spawn Shots
+    if (IsKeyPressed(KEY_LEFT_CONTROL)) {
+        for (int i = 0; i < MAX_SHOTS; i++) {
+         if (!sShots[i].active) {
+             sShots[i].active = true;
+             sShots[i].position = sPlayer.position;
+             sShots[i].rotation = sPlayer.rotation;
+             sShots[i].acceleration = 1.f;
+             sShots[i].speed.x = cosf(sPlayer.rotation*DEG2RAD) * 250.f;
+             sShots[i].speed.y = sinf(sPlayer.rotation*DEG2RAD) * 250.f;
+             break;
+            }
+        }
+    }
     //Update asteroids
     for (int i = 0; i < MAX_ASTEROIDS; i++) {
         sAsteroids[i].position.x += sAsteroids[i].speed.x * cosf(sAsteroids[i].rotation * DEG2RAD);
@@ -166,6 +187,23 @@ void GameUpdate(void) {
             sAsteroids[i].position.y = sAsteroids[i].position.y - GetScreenHeight();
         }else if (sPlayer.position.y <0) {
             sAsteroids[i].position.y = GetScreenHeight();
+        }
+    }
+
+    //update Shots
+    for (int i = 0; i < MAX_SHOTS; i++) {
+        if (sShots[i].active) {
+            sShots[i].position.x += (sShots[i].speed.x * sShots[i].acceleration) * GetFrameTime();
+            sShots[i].position.y += (sShots[i].speed.y * sShots[i].acceleration) * GetFrameTime();
+
+            if (sShots[i].position.x >screenWidth || sShots[i].position.x <0) {
+                sShots[i].active = false;
+            }
+
+            if (sShots[i].position.y >screenHeight || sShots[i].position.y <0) {
+                sShots[i].active = false;
+            }
+
         }
     }
 
@@ -188,13 +226,20 @@ void GameRender(void) {
 
     //draw asteroids
 
-    for (int i = 0; i < MAX_ASTEROIDS; ++i) {
+    for (int i = 0; i < MAX_ASTEROIDS; i++) {
         DrawTexturePro(textures[sAsteroids[i].type],
             (Rectangle){0, 0,textures[sAsteroids[i].type].width,textures[sAsteroids[i].type].height},
             (Rectangle){sAsteroids[i].position.x,sAsteroids[i].position.y,textures[sAsteroids[i].type].width,textures[sAsteroids[i].type].height },
             (Vector2){textures[sAsteroids[i].type].width/2,textures[sAsteroids[i].type].height/2},
             sAsteroids[i].rotation,
             RAYWHITE);
+    }
+
+    //draw shots
+    for (int i = 0; i < MAX_SHOTS; i++) {
+        if (sShots[i].active) {
+            DrawCircle(sShots[i].position.x, sShots[i].position.y, 2.f, RAYWHITE);
+        }
     }
 }
 void GameShutdown(void) {
@@ -209,12 +254,17 @@ void GameReset(void) {
     sPlayer.acceleration = 0;
     sPlayer.type = TYPE_PLAYER;
 
-    for (int i = 0; i < MAX_ASTEROIDS; ++i) {
+    for (int i = 0; i < MAX_ASTEROIDS; i++) {
         sAsteroids[i].rotation = (float)GetRandomValue(0, 360);
         sAsteroids[i].position = (Vector2) {GetRandomValue(0,screenWidth), GetRandomValue(0,screenHeight)};
         sAsteroids[i].type = GetRandomValue(TYPE_ASTEROID_SMALL,TYPE_ASTEROID_LARGE);
         sAsteroids[i].speed = (Vector2) { (float)GetRandomValue(1,2),(float)GetRandomValue(1,2)};
     }
+
+    for (int i = 0; i < MAX_SHOTS; i++) {
+        sShots[i].active = false;
+    }
+
 }
 
 //------------------------------------------------------------------------------------
