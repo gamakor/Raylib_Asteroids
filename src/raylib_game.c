@@ -68,6 +68,7 @@ typedef enum {
 #define MAX_TEXTURES 4
 #define MAX_ASTEROIDS 20
 #define MAX_SHOTS 10
+#define MAX_SOUNDS 2
 
 typedef enum {
     TEXTURE_METEOR_SMALL = 0,
@@ -76,7 +77,12 @@ typedef enum {
     TEXTURE_PLAYER
 };
 
+typedef enum {
+    SOUND_SHOOT =0,
+    SOUND_EXPLOSION
+};
 
+Sound sounds[MAX_SOUNDS];
 Texture2D textures[MAX_TEXTURES];
 
 //----------------------------------------------------------------------------------
@@ -91,6 +97,8 @@ static RenderTexture2D target = { 0 };  // Render texture to render our game
 sEntity sPlayer = { 0 };
 sEntity sAsteroids[MAX_ASTEROIDS];
 sEntity sShots[MAX_SHOTS];
+int asteroidScore = 0;
+int currentAsteroids = MAX_ASTEROIDS;
 
 //----------------------------------------------------------------------------------
 // Module Functions Declaration
@@ -103,6 +111,8 @@ void GameShutdown(void);
 void GameReset(void);
 
 void GameStartUp(void) {
+
+    InitAudioDevice();
 
     //Using this to set/reset game to default
     Image image1 = LoadImage("resources/player.png");
@@ -121,6 +131,8 @@ void GameStartUp(void) {
     textures[TEXTURE_METEOR_LARGE] =LoadTextureFromImage(image4);
     UnloadImage(image4);
 
+    sounds[SOUND_SHOOT] = LoadSound("resources/laser.mp3");
+    sounds[SOUND_EXPLOSION] = LoadSound("resources/explode.wav");
 
 
     GameReset();
@@ -169,6 +181,9 @@ void GameUpdate(void) {
              sShots[i].acceleration = 1.f;
              sShots[i].speed.x = cosf(sPlayer.rotation*DEG2RAD) * 250.f;
              sShots[i].speed.y = sinf(sPlayer.rotation*DEG2RAD) * 250.f;
+
+             PlaySound(sounds[SOUND_SHOOT]);
+
              break;
             }
         }
@@ -219,6 +234,11 @@ void GameUpdate(void) {
                         //Collision
                         sAsteroids[j].active = false;
                         sShots[i].active = false;
+                        asteroidScore++;
+                        currentAsteroids--;
+                        PlaySound(sounds[SOUND_EXPLOSION]);
+                        break;
+
                     }
                 }
             }
@@ -239,8 +259,11 @@ void GameRender(void) {
     DrawRectangle(5,5, 250, 100, Fade(SKYBLUE,.5f));
     DrawRectangleLines(5,5,250,100,BLUE);
 
-    DrawText(TextFormat("- Player Position: (%06.1f,%06.1f)",sPlayer.position.x,sPlayer.position.y),15,30,10,YELLOW);
     DrawText(TextFormat("- Player Rotation: (%06.1f)",sPlayer.rotation),15,45,10,YELLOW);
+    DrawText(TextFormat("- Player Position: (%06.1f,%06.1f)",sPlayer.position.x,sPlayer.position.y),15,30,10,YELLOW);
+    DrawText(TextFormat("- Score: (%i)",asteroidScore),15,60,10,YELLOW);
+    DrawText(TextFormat("- Current Asteroids: (%i)",currentAsteroids),15,75,10,YELLOW);
+
 
     //draw asteroids
 
@@ -266,6 +289,12 @@ void GameShutdown(void) {
     for (int i = 0; i < MAX_TEXTURES; i++) {
         UnloadTexture(textures[i]);
     }
+
+
+    for (int i = 0; i < MAX_SOUNDS; i++) {
+        UnloadSound(sounds[i]);
+    }
+    CloseAudioDevice();
 }
 void GameReset(void) {
     sPlayer.position = (Vector2) { screenWidth/2, screenHeight/2};
