@@ -102,6 +102,8 @@ int asteroidScore = 0;
 int currentAsteroids = MAX_ASTEROIDS;
 bool isGameOver = false;
 float beamCharge = 0.0f;
+float beamDelay = 1.f;
+bool preDetonation = true;
 
 //----------------------------------------------------------------------------------
 // Module Functions Declaration
@@ -202,6 +204,15 @@ void GameUpdate(void) {
         sSuperBeam.speed.y = sinf(sPlayer.rotation*DEG2RAD) * 200.f;
     }
 
+    //Tracks delay to superbeam is active and changes to active
+    if (sSuperBeam.active && preDetonation) {
+        beamDelay -= GetFrameTime();
+    }
+    if (sSuperBeam.active && beamDelay < 0) {
+        preDetonation = false;
+    }
+
+
     //Update SuperBeam
 
     sSuperBeam.position.x += (sSuperBeam.speed.x * sSuperBeam.acceleration) * GetFrameTime();
@@ -268,7 +279,7 @@ void GameUpdate(void) {
         }
     }
 //Check Collison for Super Beam
-    if (sSuperBeam.active) {
+    if (sSuperBeam.active && !preDetonation) {
         for (int i = 0; i < MAX_ASTEROIDS; i++) {
             if (sAsteroids[i].active) {
                 if (CheckCollisionCircles(sSuperBeam.position,100.f,sAsteroids[i].position,2.f)) {
@@ -305,6 +316,7 @@ void GameRender(void) {
     DrawText(TextFormat("- Player Position: (%06.1f,%06.1f)",sPlayer.position.x,sPlayer.position.y),15,30,10,YELLOW);
     DrawText(TextFormat("- Score: (%i)",asteroidScore),15,60,10,YELLOW);
     DrawText(TextFormat("- Current Asteroids: (%i)",currentAsteroids),15,75,10,YELLOW);
+    DrawText(TextFormat("- Beam Delay : (%f)",beamDelay),15,100,10,YELLOW);
 
     if (isGameOver) {
         DrawText(TextFormat("Game Over"),screenWidth/2,screenHeight/2 ,30,YELLOW);
@@ -332,9 +344,13 @@ void GameRender(void) {
         }
     }
 
+    //Draws Pre active super beam
+    if (sSuperBeam.active && preDetonation) {
+        DrawCircle(sSuperBeam.position.x, sSuperBeam.position.y,10.f, RAYWHITE);
+    }
 
-    //Draw Super Beam
-    if (sSuperBeam.active) {
+    //Draws active  Beam
+    if (sSuperBeam.active && !preDetonation) {
         DrawCircle(sSuperBeam.position.x, sSuperBeam.position.y, 100.f, RAYWHITE);
         //DrawRectanglePro((Rectangle){sPlayer.position.x, sPlayer.position.y,250,400},(Vector2){250/2,0},sPlayer.rotation-90,RAYWHITE);
     }
