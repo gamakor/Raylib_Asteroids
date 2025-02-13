@@ -66,7 +66,7 @@ typedef enum {
 }EntityType;
 
 #define MAX_TEXTURES 4
-#define MAX_ASTEROIDS 1
+#define MAX_ASTEROIDS 20
 #define MAX_SHOTS 10
 #define MAX_SOUNDS 2
 
@@ -97,9 +97,11 @@ static RenderTexture2D target = { 0 };  // Render texture to render our game
 sEntity sPlayer = { 0 };
 sEntity sAsteroids[MAX_ASTEROIDS];
 sEntity sShots[MAX_SHOTS];
+sEntity sSuperBeam ={0};
 int asteroidScore = 0;
 int currentAsteroids = MAX_ASTEROIDS;
 bool isGameOver = false;
+float beamCharge = 0.0f;
 
 //----------------------------------------------------------------------------------
 // Module Functions Declaration
@@ -162,15 +164,15 @@ void GameUpdate(void) {
 
 
     // Player Wrapping around the screen.
-    if (sPlayer.position.x >GetScreenWidth()) {
-        sPlayer.position.x = sPlayer.position.x - GetScreenWidth();
+    if (sPlayer.position.x >screenWidth) {
+        sPlayer.position.x = sPlayer.position.x - screenWidth;
     } else if (sPlayer.position.x <0) {
-        sPlayer.position.x = GetScreenWidth();
+        sPlayer.position.x = screenWidth;
     }
-    if (sPlayer.position.y >GetScreenHeight()) {
-        sPlayer.position.y = sPlayer.position.y - GetScreenHeight();
+    if (sPlayer.position.y >screenHeight) {
+        sPlayer.position.y = sPlayer.position.y - screenHeight;
     }else if (sPlayer.position.y <0) {
-        sPlayer.position.y = GetScreenHeight();
+        sPlayer.position.y = screenHeight;
     }
 
     //Spawn Shots
@@ -190,21 +192,40 @@ void GameUpdate(void) {
             }
         }
     }
+    //
+    if (IsKeyPressed(KEY_B) && !sSuperBeam.active) {
+        sSuperBeam.active = true;
+        sSuperBeam.position = sPlayer.position;
+        sSuperBeam.rotation = sPlayer.rotation;
+        sSuperBeam.acceleration = 1.f;
+        sSuperBeam.speed.x = cosf(sPlayer.rotation*DEG2RAD) * 200.f;
+        sSuperBeam.speed.y = sinf(sPlayer.rotation*DEG2RAD) * 200.f;
+    }
+
+    //Update SuperBeam
+
+    sSuperBeam.position.x += (sSuperBeam.speed.x * sSuperBeam.acceleration) * GetFrameTime();
+    sSuperBeam.position.y += (sSuperBeam.speed.y * sSuperBeam.acceleration) * GetFrameTime();
+
+
+
+
     //Update asteroids
     for (int i = 0; i < MAX_ASTEROIDS; i++) {
         if (sAsteroids[i].active) {
             sAsteroids[i].position.x += sAsteroids[i].speed.x * cosf(sAsteroids[i].rotation * DEG2RAD);
             sAsteroids[i].position.y += sAsteroids[i].speed.y * sinf(sAsteroids[i].rotation * DEG2RAD);
 
-            if (sAsteroids[i].position.x >GetScreenWidth()) {
-                sAsteroids[i].position.x = sAsteroids[i].position.x - GetScreenWidth();
+            if (sAsteroids[i].position.x > screenWidth) {
+                sAsteroids[i].position.x = sAsteroids[i].position.x -screenWidth;
             } else if (sAsteroids[i].position.x <0) {
-                sAsteroids[i].position.x = GetScreenWidth();
+                sAsteroids[i].position.x = screenWidth;
             }
-            if (sAsteroids[i].position.y >GetScreenHeight()) {
-                sAsteroids[i].position.y = sAsteroids[i].position.y - GetScreenHeight();
-            }else if (sPlayer.position.y <0) {
-                sAsteroids[i].position.y = GetScreenHeight();
+
+            if (sAsteroids[i].position.y >screenHeight) {
+                sAsteroids[i].position.y = sAsteroids[i].position.y - screenHeight;
+            }else if (sAsteroids[i].position.y <0) {
+                sAsteroids[i].position.y = screenHeight;
             }
         }
     }
@@ -242,6 +263,21 @@ void GameUpdate(void) {
                         break;
 
                     }
+                }
+            }
+        }
+    }
+//Check Collison for Super Beam
+    if (sSuperBeam.active) {
+        for (int i = 0; i < MAX_ASTEROIDS; i++) {
+            if (sAsteroids[i].active) {
+                if (CheckCollisionCircles(sSuperBeam.position,100.f,sAsteroids[i].position,2.f)) {
+                    sAsteroids[i].active = false;
+                    asteroidScore++;
+                    currentAsteroids--;
+                    PlaySound(sounds[SOUND_EXPLOSION]);
+
+                    break;
                 }
             }
         }
@@ -295,6 +331,13 @@ void GameRender(void) {
             DrawCircle(sShots[i].position.x, sShots[i].position.y, 2.f, RAYWHITE);
         }
     }
+
+
+    //Draw Super Beam
+    if (sSuperBeam.active) {
+        DrawCircle(sSuperBeam.position.x, sSuperBeam.position.y, 100.f, RAYWHITE);
+        //DrawRectanglePro((Rectangle){sPlayer.position.x, sPlayer.position.y,250,400},(Vector2){250/2,0},sPlayer.rotation-90,RAYWHITE);
+    }
 }
 void GameShutdown(void) {
     for (int i = 0; i < MAX_TEXTURES; i++) {
@@ -327,6 +370,8 @@ void GameReset(void) {
     for (int i = 0; i < MAX_SHOTS; i++) {
         sShots[i].active = false;
     }
+
+    sSuperBeam.active = false;
 
 }
 

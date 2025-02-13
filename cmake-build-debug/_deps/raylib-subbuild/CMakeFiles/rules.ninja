@@ -23,7 +23,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild -B/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild
+  command = /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild -B/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild
   description = Re-running CMake...
   generator = 1
 
@@ -32,7 +32,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja $FILE_ARG -t clean $TARGETS
+  command = /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -40,6 +40,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -t targets
+  command = /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -t targets
   description = All primary targets available:
 

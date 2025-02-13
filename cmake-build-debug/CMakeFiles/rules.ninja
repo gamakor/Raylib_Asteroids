@@ -33,7 +33,7 @@ rule C_COMPILER__raylib_unscanned_Debug
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__raylib_Debug
-  command = $PRE_LINK && /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/bin/cmake -E rm -f $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
+  command = $PRE_LINK && /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/bin/cmake -E rm -f $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -71,7 +71,7 @@ rule C_EXECUTABLE_LINKER__raylib_game_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/gamakor/CLionProjects/Raylib_Asteroids -B/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug
+  command = /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/gamakor/CLionProjects/Raylib_Asteroids -B/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
@@ -80,7 +80,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja $FILE_ARG -t clean $TARGETS
+  command = /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -88,6 +88,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -t targets
+  command = /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -t targets
   description = All primary targets available:
 

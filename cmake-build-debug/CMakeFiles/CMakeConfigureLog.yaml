@@ -4,16 +4,16 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
       - "CMakeLists.txt:16 (project)"
     message: |
       The system is: Linux - 6.12.11-200.fc41.x86_64 - x86_64
   -
     kind: "message-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:16 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
@@ -33,9 +33,9 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:16 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
@@ -55,14 +55,14 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:16 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-U78397"
-      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-U78397"
+      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-iI5EyN"
+      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-iI5EyN"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -71,10 +71,10 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-U78397'
+        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-iI5EyN'
         
-        Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_a6cbb
-        [1/2] /usr/bin/cc   -std=gnu99 -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o -c /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_821d7
+        [1/2] /usr/bin/cc   -std=gnu99 -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o -c /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -84,8 +84,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 14.2.1 20250110 (Red Hat 14.2.1-7) (GCC) 
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a6cbb.dir/'
-         /usr/libexec/gcc/x86_64-redhat-linux/14/cc1 -quiet -v /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_a6cbb.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -std=gnu99 -version -fdiagnostics-color=always -o /tmp/cc8rnhaE.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_821d7.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/14/cc1 -quiet -v /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_821d7.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -std=gnu99 -version -fdiagnostics-color=always -o /tmp/cc52p903.s
         GNU C99 (GCC) version 14.2.1 20250110 (Red Hat 14.2.1-7) (x86_64-redhat-linux)
         	compiled by GNU C version 14.2.1 20250110 (Red Hat 14.2.1-7), GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.24-GMP
         
@@ -99,13 +99,13 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: fecd655b22c360a0ff305bc79db7f32c
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a6cbb.dir/'
-         as -v --64 -o CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o /tmp/cc8rnhaE.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_821d7.dir/'
+         as -v --64 -o CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o /tmp/cc52p903.s
         GNU assembler version 2.43.1 (x86_64-redhat-linux) using BFD version version 2.43.1-5.fc41
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.'
-        [2/2] : && /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o -o cmTC_a6cbb   && :
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o -o cmTC_821d7   && :
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper
@@ -118,19 +118,19 @@ events:
         gcc version 14.2.1 20250110 (Red Hat 14.2.1-7) (GCC) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a6cbb' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a6cbb.'
-         /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cccvgJjr.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_a6cbb /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_821d7' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_821d7.'
+         /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccOZDo4W.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_821d7 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
         collect2 version 14.2.1 20250110 (Red Hat 14.2.1-7)
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cccvgJjr.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_a6cbb /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccOZDo4W.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_821d7 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
         GNU ld version 2.43.1-5.fc41
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a6cbb' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a6cbb.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_821d7' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_821d7.'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:16 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
@@ -149,17 +149,17 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:16 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-U78397']
+        ignore line: [Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-iI5EyN']
         ignore line: []
-        ignore line: [Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_a6cbb]
-        ignore line: [[1/2] /usr/bin/cc   -std=gnu99 -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o -c /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_821d7]
+        ignore line: [[1/2] /usr/bin/cc   -std=gnu99 -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o -c /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -169,8 +169,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 14.2.1 20250110 (Red Hat 14.2.1-7) (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a6cbb.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/cc1 -quiet -v /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_a6cbb.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -std=gnu99 -version -fdiagnostics-color=always -o /tmp/cc8rnhaE.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_821d7.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/cc1 -quiet -v /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_821d7.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -std=gnu99 -version -fdiagnostics-color=always -o /tmp/cc52p903.s]
         ignore line: [GNU C99 (GCC) version 14.2.1 20250110 (Red Hat 14.2.1-7) (x86_64-redhat-linux)]
         ignore line: [	compiled by GNU C version 14.2.1 20250110 (Red Hat 14.2.1-7)  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.24-GMP]
         ignore line: []
@@ -184,13 +184,13 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: fecd655b22c360a0ff305bc79db7f32c]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a6cbb.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o /tmp/cc8rnhaE.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_821d7.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o /tmp/cc52p903.s]
         ignore line: [GNU assembler version 2.43.1 (x86_64-redhat-linux) using BFD version version 2.43.1-5.fc41]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.']
-        ignore line: [[2/2] : && /usr/bin/cc  -v -Wl -v CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o -o cmTC_a6cbb   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] : && /usr/bin/cc  -v -Wl -v CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o -o cmTC_821d7   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper]
@@ -203,13 +203,13 @@ events:
         ignore line: [gcc version 14.2.1 20250110 (Red Hat 14.2.1-7) (GCC) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a6cbb' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a6cbb.']
-        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cccvgJjr.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_a6cbb /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_821d7' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_821d7.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccOZDo4W.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_821d7 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
           arg [/usr/libexec/gcc/x86_64-redhat-linux/14/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cccvgJjr.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccOZDo4W.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -224,7 +224,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_a6cbb] ==> ignore
+          arg [cmTC_821d7] ==> ignore
           arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o]
@@ -234,7 +234,7 @@ events:
           arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
           arg [-L/usr/lib/gcc/x86_64-redhat-linux/14/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -249,7 +249,7 @@ events:
           arg [/usr/lib/gcc/x86_64-redhat-linux/14/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/crtend.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
         ignore line: [collect2 version 14.2.1 20250110 (Red Hat 14.2.1-7)]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cccvgJjr.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_a6cbb /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_a6cbb.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccOZDo4W.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_821d7 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_821d7.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
         linker tool for 'C': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
@@ -268,9 +268,9 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:16 (project)"
     message: |
       Running the C compiler's linker: "/usr/bin/ld" "-v"
@@ -278,14 +278,14 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:16 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-AVYUyd"
-      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-AVYUyd"
+      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-OCDtNB"
+      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-OCDtNB"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -295,10 +295,10 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-AVYUyd'
+        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-OCDtNB'
         
-        Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_77f41
-        [1/2] /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o -c /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_4d601
+        [1/2] /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o -c /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -308,8 +308,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 14.2.1 20250110 (Red Hat 14.2.1-7) (GCC) 
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77f41.dir/'
-         /usr/libexec/gcc/x86_64-redhat-linux/14/cc1plus -quiet -v -D_GNU_SOURCE /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_77f41.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -o /tmp/ccBk6JxD.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4d601.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/14/cc1plus -quiet -v -D_GNU_SOURCE /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4d601.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -o /tmp/ccpeZxkP.s
         GNU C++17 (GCC) version 14.2.1 20250110 (Red Hat 14.2.1-7) (x86_64-redhat-linux)
         	compiled by GNU C version 14.2.1 20250110 (Red Hat 14.2.1-7), GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.24-GMP
         
@@ -326,13 +326,13 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 83f3a9edaed8e30f2ac0573d464ad62b
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77f41.dir/'
-         as -v --64 -o CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccBk6JxD.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4d601.dir/'
+         as -v --64 -o CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccpeZxkP.s
         GNU assembler version 2.43.1 (x86_64-redhat-linux) using BFD version version 2.43.1-5.fc41
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] : && /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_77f41   && :
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4d601   && :
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper
@@ -345,19 +345,19 @@ events:
         gcc version 14.2.1 20250110 (Red Hat 14.2.1-7) (GCC) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_77f41' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_77f41.'
-         /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaXZVnU.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_77f41 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4d601' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4d601.'
+         /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9gCfZE.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4d601 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
         collect2 version 14.2.1 20250110 (Red Hat 14.2.1-7)
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaXZVnU.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_77f41 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9gCfZE.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4d601 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
         GNU ld version 2.43.1-5.fc41
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_77f41' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_77f41.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4d601' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4d601.'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:16 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
@@ -382,17 +382,17 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:16 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-AVYUyd']
+        ignore line: [Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-OCDtNB']
         ignore line: []
-        ignore line: [Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_77f41]
-        ignore line: [[1/2] /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o -c /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_4d601]
+        ignore line: [[1/2] /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o -c /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -402,8 +402,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 14.2.1 20250110 (Red Hat 14.2.1-7) (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77f41.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/cc1plus -quiet -v -D_GNU_SOURCE /var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_77f41.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -o /tmp/ccBk6JxD.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4d601.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/cc1plus -quiet -v -D_GNU_SOURCE /var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4d601.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -o /tmp/ccpeZxkP.s]
         ignore line: [GNU C++17 (GCC) version 14.2.1 20250110 (Red Hat 14.2.1-7) (x86_64-redhat-linux)]
         ignore line: [	compiled by GNU C version 14.2.1 20250110 (Red Hat 14.2.1-7)  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.24-GMP]
         ignore line: []
@@ -420,13 +420,13 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 83f3a9edaed8e30f2ac0573d464ad62b]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77f41.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccBk6JxD.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4d601.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccpeZxkP.s]
         ignore line: [GNU assembler version 2.43.1 (x86_64-redhat-linux) using BFD version version 2.43.1-5.fc41]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] : && /usr/bin/c++  -v -Wl -v CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_77f41   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /usr/bin/c++  -v -Wl -v CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4d601   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper]
@@ -439,13 +439,13 @@ events:
         ignore line: [gcc version 14.2.1 20250110 (Red Hat 14.2.1-7) (GCC) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_77f41' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_77f41.']
-        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaXZVnU.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_77f41 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4d601' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4d601.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9gCfZE.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4d601 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
           arg [/usr/libexec/gcc/x86_64-redhat-linux/14/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccaXZVnU.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc9gCfZE.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -460,7 +460,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_77f41] ==> ignore
+          arg [cmTC_4d601] ==> ignore
           arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o]
@@ -470,7 +470,7 @@ events:
           arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
           arg [-L/usr/lib/gcc/x86_64-redhat-linux/14/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -481,7 +481,7 @@ events:
           arg [/usr/lib/gcc/x86_64-redhat-linux/14/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/crtend.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
         ignore line: [collect2 version 14.2.1 20250110 (Red Hat 14.2.1-7)]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaXZVnU.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_77f41 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_77f41.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9gCfZE.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4d601 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_4d601.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
@@ -500,9 +500,9 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:16 (project)"
     message: |
       Running the CXX compiler's linker: "/usr/bin/ld" "-v"
@@ -510,17 +510,17 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
       - "cmake-build-debug/_deps/raylib-src/cmake/AddIfFlagCompiles.cmake:3 (CHECK_C_COMPILER_FLAG)"
       - "cmake-build-debug/_deps/raylib-src/cmake/CompilerFlags.cmake:5 (add_if_flag_compiles)"
       - "cmake-build-debug/_deps/raylib-src/CMakeLists.txt:35 (include)"
     checks:
       - "Performing Test COMPILER_HAS_THOSE_TOGGLES"
     directories:
-      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-7JBUTH"
-      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-7JBUTH"
+      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-HLDBdH"
+      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-HLDBdH"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -530,26 +530,26 @@ events:
       variable: "COMPILER_HAS_THOSE_TOGGLES"
       cached: true
       stdout: |
-        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-7JBUTH'
+        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-HLDBdH'
         
-        Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_e4f2f
-        [1/2] /usr/bin/cc -DCOMPILER_HAS_THOSE_TOGGLES  -std=gnu99 -fdiagnostics-color=always   -Werror=pointer-arith -o CMakeFiles/cmTC_e4f2f.dir/src.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-7JBUTH/src.c
-        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_e4f2f.dir/src.c.o -o cmTC_e4f2f   && :
+        Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_91517
+        [1/2] /usr/bin/cc -DCOMPILER_HAS_THOSE_TOGGLES  -std=gnu99 -fdiagnostics-color=always   -Werror=pointer-arith -o CMakeFiles/cmTC_91517.dir/src.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-HLDBdH/src.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_91517.dir/src.c.o -o cmTC_91517   && :
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindThreads.cmake:163 (_threads_check_libc)"
       - "cmake-build-debug/_deps/raylib-src/src/external/glfw/CMakeLists.txt:60 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bu6hpD"
-      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bu6hpD"
+      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JZouNt"
+      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JZouNt"
     cmakeVariables:
       CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -559,24 +559,24 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bu6hpD'
+        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JZouNt'
         
-        Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_91bc4
-        [1/2] /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_91bc4.dir/src.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bu6hpD/src.c
-        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  CMakeFiles/cmTC_91bc4.dir/src.c.o -o cmTC_91bc4   && :
+        Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_cde7e
+        [1/2] /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_cde7e.dir/src.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JZouNt/src.c
+        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  CMakeFiles/cmTC_cde7e.dir/src.c.o -o cmTC_cde7e   && :
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckLibraryExists.cmake:69 (try_compile)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindX11.cmake:693 (check_library_exists)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindX11.cmake:693 (check_library_exists)"
       - "cmake-build-debug/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:181 (find_package)"
     checks:
       - "Looking for XOpenDisplay in /usr/lib64/libX11.so;/usr/lib64/libXext.so"
     directories:
-      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-j9fSTJ"
-      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-j9fSTJ"
+      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-V0VIHg"
+      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-V0VIHg"
     cmakeVariables:
       CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -586,24 +586,24 @@ events:
       variable: "X11_LIB_X11_SOLO"
       cached: true
       stdout: |
-        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-j9fSTJ'
+        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-V0VIHg'
         
-        Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_77e96
-        [1/2] /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=XOpenDisplay -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_77e96.dir/CheckFunctionExists.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-j9fSTJ/CheckFunctionExists.c
-        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=XOpenDisplay  CMakeFiles/cmTC_77e96.dir/CheckFunctionExists.c.o -o cmTC_77e96  /usr/lib64/libX11.so  /usr/lib64/libXext.so && :
+        Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_7ef1a
+        [1/2] /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=XOpenDisplay -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_7ef1a.dir/CheckFunctionExists.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-V0VIHg/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=XOpenDisplay  CMakeFiles/cmTC_7ef1a.dir/CheckFunctionExists.c.o -o cmTC_7ef1a  /usr/lib64/libX11.so  /usr/lib64/libXext.so && :
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindX11.cmake:708 (check_function_exists)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindX11.cmake:708 (check_function_exists)"
       - "cmake-build-debug/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:181 (find_package)"
     checks:
       - "Looking for gethostbyname"
     directories:
-      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-UFq9Cx"
-      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-UFq9Cx"
+      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-IztkGM"
+      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-IztkGM"
     cmakeVariables:
       CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -613,24 +613,24 @@ events:
       variable: "CMAKE_HAVE_GETHOSTBYNAME"
       cached: true
       stdout: |
-        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-UFq9Cx'
+        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-IztkGM'
         
-        Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_39578
-        [1/2] /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=gethostbyname -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_39578.dir/CheckFunctionExists.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-UFq9Cx/CheckFunctionExists.c
-        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=gethostbyname  CMakeFiles/cmTC_39578.dir/CheckFunctionExists.c.o -o cmTC_39578   && :
+        Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_1836d
+        [1/2] /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=gethostbyname -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_1836d.dir/CheckFunctionExists.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-IztkGM/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=gethostbyname  CMakeFiles/cmTC_1836d.dir/CheckFunctionExists.c.o -o cmTC_1836d   && :
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindX11.cmake:722 (check_function_exists)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindX11.cmake:722 (check_function_exists)"
       - "cmake-build-debug/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:181 (find_package)"
     checks:
       - "Looking for connect"
     directories:
-      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-asVcp5"
-      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-asVcp5"
+      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-47Zrjd"
+      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-47Zrjd"
     cmakeVariables:
       CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -640,24 +640,24 @@ events:
       variable: "CMAKE_HAVE_CONNECT"
       cached: true
       stdout: |
-        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-asVcp5'
+        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-47Zrjd'
         
-        Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_26356
-        [1/2] /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=connect -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_26356.dir/CheckFunctionExists.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-asVcp5/CheckFunctionExists.c
-        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=connect  CMakeFiles/cmTC_26356.dir/CheckFunctionExists.c.o -o cmTC_26356   && :
+        Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_7eafe
+        [1/2] /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=connect -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_7eafe.dir/CheckFunctionExists.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-47Zrjd/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=connect  CMakeFiles/cmTC_7eafe.dir/CheckFunctionExists.c.o -o cmTC_7eafe   && :
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindX11.cmake:731 (check_function_exists)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindX11.cmake:731 (check_function_exists)"
       - "cmake-build-debug/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:181 (find_package)"
     checks:
       - "Looking for remove"
     directories:
-      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-h8QVIb"
-      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-h8QVIb"
+      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DBAHqn"
+      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DBAHqn"
     cmakeVariables:
       CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -667,24 +667,24 @@ events:
       variable: "CMAKE_HAVE_REMOVE"
       cached: true
       stdout: |
-        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-h8QVIb'
+        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DBAHqn'
         
-        Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_47320
-        [1/2] /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=remove -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_47320.dir/CheckFunctionExists.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-h8QVIb/CheckFunctionExists.c
-        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=remove  CMakeFiles/cmTC_47320.dir/CheckFunctionExists.c.o -o cmTC_47320   && :
+        Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_bb4e8
+        [1/2] /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=remove -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_bb4e8.dir/CheckFunctionExists.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DBAHqn/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=remove  CMakeFiles/cmTC_bb4e8.dir/CheckFunctionExists.c.o -o cmTC_bb4e8   && :
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
-      - "/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindX11.cmake:740 (check_function_exists)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindX11.cmake:740 (check_function_exists)"
       - "cmake-build-debug/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:181 (find_package)"
     checks:
       - "Looking for shmat"
     directories:
-      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-yc1wgq"
-      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-yc1wgq"
+      source: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-OE4JP7"
+      binary: "/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-OE4JP7"
     cmakeVariables:
       CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -694,11 +694,11 @@ events:
       variable: "CMAKE_HAVE_SHMAT"
       cached: true
       stdout: |
-        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-yc1wgq'
+        Change Dir: '/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-OE4JP7'
         
-        Run Build Command(s): /var/lib/snapd/snap/clion/314/bin/ninja/linux/x64/ninja -v cmTC_daaa7
-        [1/2] /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=shmat -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_daaa7.dir/CheckFunctionExists.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-yc1wgq/CheckFunctionExists.c
-        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=shmat  CMakeFiles/cmTC_daaa7.dir/CheckFunctionExists.c.o -o cmTC_daaa7   && :
+        Run Build Command(s): /var/lib/snapd/snap/clion/322/bin/ninja/linux/x64/ninja -v cmTC_98bd7
+        [1/2] /usr/bin/cc   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=shmat -std=gnu99 -fdiagnostics-color=always -o CMakeFiles/cmTC_98bd7.dir/CheckFunctionExists.c.o -c /home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-OE4JP7/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -DCHECK_FUNCTION_EXISTS=shmat  CMakeFiles/cmTC_98bd7.dir/CheckFunctionExists.c.o -o cmTC_98bd7   && :
         
       exitCode: 0
 ...

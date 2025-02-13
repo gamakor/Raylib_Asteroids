@@ -3,7 +3,7 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=/var/lib/snapd/snap/clion/314/bin/cmake/linux/x64/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitclone.cmake
+command=/var/lib/snapd/snap/clion/322/bin/cmake/linux/x64/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitclone.cmake
 source_dir=/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps/raylib-src
 work_dir=/home/gamakor/CLionProjects/Raylib_Asteroids/cmake-build-debug/_deps
 repository=https://github.com/raysan5/raylib.git
