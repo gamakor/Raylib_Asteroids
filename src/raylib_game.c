@@ -369,6 +369,8 @@ void GameRender(void) {
     } else {
         DrawRectangle(400,20,100,30, GREEN); // when fully charged turn green.
     }
+
+    DrawRectangleLines(400,20,100,30, WHITE);
 }
 void GameShutdown(void) {
     for (int i = 0; i < MAX_TEXTURES; i++) {
