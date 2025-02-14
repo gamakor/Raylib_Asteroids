@@ -195,13 +195,14 @@ void GameUpdate(void) {
         }
     }
     //
-    if (IsKeyPressed(KEY_B) && !sSuperBeam.active) {
+    if (IsKeyPressed(KEY_B) && !sSuperBeam.active && beamCharge >= 100.f) {
         sSuperBeam.active = true;
         sSuperBeam.position = sPlayer.position;
         sSuperBeam.rotation = sPlayer.rotation;
         sSuperBeam.acceleration = 1.f;
         sSuperBeam.speed.x = cosf(sPlayer.rotation*DEG2RAD) * 200.f;
         sSuperBeam.speed.y = sinf(sPlayer.rotation*DEG2RAD) * 200.f;
+        beamCharge = 0.f;
     }
 
     //Tracks delay to superbeam is active and changes to active
@@ -270,6 +271,7 @@ void GameUpdate(void) {
                         sShots[i].active = false;
                         asteroidScore++;
                         currentAsteroids--;
+                        beamCharge += 10.f;
                         PlaySound(sounds[SOUND_EXPLOSION]);
                         break;
 
@@ -293,7 +295,9 @@ void GameUpdate(void) {
             }
         }
     }
-
+    if (beamCharge <= 100.f) {
+        beamCharge += GetFrameTime();
+    }
     if (currentAsteroids < 1) {
         isGameOver = true;
     }
@@ -312,11 +316,14 @@ void GameRender(void) {
     DrawRectangle(5,5, 250, 100, Fade(SKYBLUE,.5f));
     DrawRectangleLines(5,5,250,100,BLUE);
 
+
     DrawText(TextFormat("- Player Rotation: (%06.1f)",sPlayer.rotation),15,45,10,YELLOW);
     DrawText(TextFormat("- Player Position: (%06.1f,%06.1f)",sPlayer.position.x,sPlayer.position.y),15,30,10,YELLOW);
     DrawText(TextFormat("- Score: (%i)",asteroidScore),15,60,10,YELLOW);
     DrawText(TextFormat("- Current Asteroids: (%i)",currentAsteroids),15,75,10,YELLOW);
-    DrawText(TextFormat("- Beam Delay : (%f)",beamDelay),15,100,10,YELLOW);
+    //DrawText(TextFormat("- Beam Charge : (%f)",),15,100,10,YELLOW);
+
+
 
     if (isGameOver) {
         DrawText(TextFormat("Game Over"),screenWidth/2,screenHeight/2 ,30,YELLOW);
@@ -354,6 +361,14 @@ void GameRender(void) {
         DrawCircle(sSuperBeam.position.x, sSuperBeam.position.y, 100.f, RAYWHITE);
         //DrawRectanglePro((Rectangle){sPlayer.position.x, sPlayer.position.y,250,400},(Vector2){250/2,0},sPlayer.rotation-90,RAYWHITE);
     }
+
+    //Draw BeamCharge Bar
+    float beamChargeNorm = Normalize(beamCharge,0.f,100.f);
+    if (beamChargeNorm < 1.f) {
+        DrawRectangle(400,20,100*beamChargeNorm,30, YELLOW);
+    } else {
+        DrawRectangle(400,20,100,30, GREEN); // when fully charged turn green.
+    }
 }
 void GameShutdown(void) {
     for (int i = 0; i < MAX_TEXTURES; i++) {
@@ -374,6 +389,9 @@ void GameReset(void) {
     sPlayer.type = TYPE_PLAYER;
     asteroidScore = 0;
     currentAsteroids = MAX_ASTEROIDS;
+    beamDelay = 1.f;
+    preDetonation = true;
+
 
     for (int i = 0; i < MAX_ASTEROIDS; i++) {
         sAsteroids[i].rotation = (float)GetRandomValue(0, 360);
