@@ -66,9 +66,10 @@ typedef enum {
 }EntityType;
 
 #define MAX_TEXTURES 4
-#define MAX_ASTEROIDS 20
+#define MAX_ASTEROIDS 40
 #define MAX_SHOTS 10
 #define MAX_SOUNDS 2
+#define SPAWN_ASTEROIDS 10
 
 typedef enum {
     TEXTURE_METEOR_SMALL = 0,
@@ -104,6 +105,8 @@ bool isGameOver = false;
 float beamCharge = 0.0f;
 float beamDelay = 1.f;
 bool preDetonation = true;
+int lives = 3;
+float spawnInvincibility =2.f;
 
 //----------------------------------------------------------------------------------
 // Module Functions Declaration
@@ -114,6 +117,10 @@ void GameUpdate(void);
 void GameRender(void);
 void GameShutdown(void);
 void GameReset(void);
+bool hasActiveAsteroids();
+void CheckAsteroidType(sEntity *entity);
+void PlayerDeath(void);
+
 
 void GameStartUp(void) {
 
@@ -142,6 +149,10 @@ void GameStartUp(void) {
 
     GameReset();
 }
+
+
+
+
 void GameUpdate(void) {
 
     if (IsKeyDown(KEY_A)) {
@@ -152,11 +163,11 @@ void GameUpdate(void) {
         sPlayer.rotation +=  200.f *GetFrameTime();
     }
 
-    sPlayer.speed.x = cosf(sPlayer.rotation*DEG2RAD) * 6.f;
-    sPlayer.speed.y = sinf(sPlayer.rotation*DEG2RAD) * 6.f;
+    sPlayer.speed.x = cosf(sPlayer.rotation*DEG2RAD) * 100.f;
+    sPlayer.speed.y = sinf(sPlayer.rotation*DEG2RAD) * 100.f;
 
     if (IsKeyDown(KEY_W)) {
-        if (sPlayer.acceleration <50.f) {
+        if (sPlayer.acceleration <1.f) {
             sPlayer.acceleration += 0.04f;
         }
 
@@ -272,6 +283,7 @@ void GameUpdate(void) {
                         asteroidScore++;
                         currentAsteroids--;
                         beamCharge += 10.f;
+                        CheckAsteroidType(&sAsteroids[j]);
                         PlaySound(sounds[SOUND_EXPLOSION]);
                         break;
 
@@ -284,7 +296,9 @@ void GameUpdate(void) {
     if (sSuperBeam.active && !preDetonation) {
         for (int i = 0; i < MAX_ASTEROIDS; i++) {
             if (sAsteroids[i].active) {
-                if (CheckCollisionCircles(sSuperBeam.position,100.f,sAsteroids[i].position,2.f)) {
+                float roidTexWidth = textures[sAsteroids[i].type].width;
+
+                if (CheckCollisionCircles(sSuperBeam.position,100.f,sAsteroids[i].position,roidTexWidth/2)) {
                     sAsteroids[i].active = false;
                     asteroidScore++;
                     currentAsteroids--;
@@ -295,12 +309,31 @@ void GameUpdate(void) {
             }
         }
     }
+
+//Chcek for collision of player with asteroids if not just spawned in
+if (spawnInvincibility <0) {
+
+    // Need to add a switch statement for pulling radius image size are all the same so they have the same hit box
+    for (int i = 0; i < MAX_ASTEROIDS; ++i) {
+        float playerTexWidth = textures[sPlayer.type].width / 4; //Player divided by 4 because render texture is already divided by 4
+        float roidTexWidth = textures[sAsteroids[i].type].width;
+        if (CheckCollisionCircles(sPlayer.position,playerTexWidth,sAsteroids[i].position,roidTexWidth)) {
+            PlayerDeath();
+        }
+    }
+}
+
     if (beamCharge <= 100.f) {
         beamCharge += GetFrameTime();
     }
-    if (currentAsteroids < 1) {
+
+    if (spawnInvincibility> 0) {
+        spawnInvincibility -= GetFrameTime();
+    }
+    if (hasActiveAsteroids() == false) {
         isGameOver = true;
     }
+
 
 }
 void GameRender(void) {
@@ -395,7 +428,7 @@ void GameReset(void) {
     preDetonation = true;
 
 
-    for (int i = 0; i < MAX_ASTEROIDS; i++) {
+    for (int i = 0; i < SPAWN_ASTEROIDS; i++) {
         sAsteroids[i].rotation = (float)GetRandomValue(0, 360);
         sAsteroids[i].position = (Vector2) {GetRandomValue(0,screenWidth), GetRandomValue(0,screenHeight)};
         sAsteroids[i].type = GetRandomValue(TYPE_ASTEROID_SMALL,TYPE_ASTEROID_LARGE);
@@ -408,6 +441,82 @@ void GameReset(void) {
     }
 
     sSuperBeam.active = false;
+
+}
+
+bool hasActiveAsteroids() {
+    for (int    i = 0;    i < MAX_ASTEROIDS; i++) {
+        if (sAsteroids[i].active) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void CheckAsteroidType(sEntity *entity)
+ {
+    //take asteroid check type and spawn new small asteroid if passed asteroid is bigge than small
+    // spawn asteroids from the player in random directions .
+;
+        // check type of collision
+    if (entity->type == TYPE_ASTEROID_MED ) {
+        int asteroidsSpawned = 0;
+        //Seach for non active asteroid and spawn on entity death
+        for (int i = 0; i < MAX_ASTEROIDS; i++) {
+            if (!sAsteroids[i].active) {
+                sAsteroids[i].rotation = (float)GetRandomValue(0, 360);
+                sAsteroids[i].position = entity->position;
+                sAsteroids[i].type = TYPE_ASTEROID_SMALL;
+                sAsteroids[i].speed = (Vector2) { (float)GetRandomValue(1,2),(float)GetRandomValue(1,2)};
+                sAsteroids[i].active = true;
+
+                asteroidsSpawned++;
+                //Check if enough child Asteroids have spawned
+                if (asteroidsSpawned == 1 ) {
+                    break;
+                }
+            }
+        }
+
+    }
+
+    if (entity->type == TYPE_ASTEROID_LARGE ) {
+        int asteroidsSpawned = 0;
+        for (int i = 0; i < MAX_ASTEROIDS; i++) {
+            if (!sAsteroids[i].active) {
+                sAsteroids[i].rotation = (float)GetRandomValue(0, 360);
+                sAsteroids[i].position = entity->position;
+                sAsteroids[i].type = TYPE_ASTEROID_SMALL;
+                sAsteroids[i].speed = (Vector2) { (float)GetRandomValue(1,2),(float)GetRandomValue(1,2)};
+                sAsteroids[i].active = true;
+
+                asteroidsSpawned++;
+
+                if (asteroidsSpawned == 2 ) {
+                    break;
+                }
+            }
+        }
+
+    }
+}
+
+void PlayerDeath(void) {
+    lives--;
+
+    if (lives < 0) {
+        isGameOver = true;
+
+    } else {
+        sPlayer.position = (Vector2) { screenWidth/2, screenHeight/2};
+        sPlayer.speed = (Vector2) { 0, 0};
+        sPlayer.rotation = 0;
+        sPlayer.acceleration = 0;
+        sPlayer.type = TYPE_PLAYER;
+        spawnInvincibility = 2.f;
+    }
+
+
 
 }
 
