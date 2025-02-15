@@ -70,6 +70,7 @@ typedef enum {
 #define MAX_SHOTS 10
 #define MAX_SOUNDS 2
 #define SPAWN_ASTEROIDS 10
+#define MAX_LIVES 3
 
 typedef enum {
     TEXTURE_METEOR_SMALL = 0,
@@ -99,6 +100,7 @@ sEntity sPlayer = { 0 };
 sEntity sAsteroids[MAX_ASTEROIDS];
 sEntity sShots[MAX_SHOTS];
 sEntity sSuperBeam ={0};
+sEntity sLives[MAX_LIVES];
 int asteroidScore = 0;
 int currentAsteroids = MAX_ASTEROIDS;
 bool isGameOver = false;
@@ -107,6 +109,7 @@ float beamDelay = 1.f;
 bool preDetonation = true;
 int lives = 3;
 float spawnInvincibility =2.f;
+bool showDebug = false;
 
 //----------------------------------------------------------------------------------
 // Module Functions Declaration
@@ -154,7 +157,7 @@ void GameStartUp(void) {
 
 
 void GameUpdate(void) {
-
+if (!isGameOver) {
     if (IsKeyDown(KEY_A)) {
         sPlayer.rotation -= 200.f *GetFrameTime();
     }
@@ -172,8 +175,8 @@ void GameUpdate(void) {
         }
 
     }
-        sPlayer.position.x += (sPlayer.speed.x * sPlayer.acceleration) * GetFrameTime();
-        sPlayer.position.y += (sPlayer.speed.y * sPlayer.acceleration) * GetFrameTime();
+    sPlayer.position.x += (sPlayer.speed.x * sPlayer.acceleration) * GetFrameTime();
+    sPlayer.position.y += (sPlayer.speed.y * sPlayer.acceleration) * GetFrameTime();
 
 
     // Player Wrapping around the screen.
@@ -191,17 +194,17 @@ void GameUpdate(void) {
     //Spawn Shots
     if (IsKeyPressed(KEY_SPACE)) {
         for (int i = 0; i < MAX_SHOTS; i++) {
-         if (!sShots[i].active) {
-             sShots[i].active = true;
-             sShots[i].position = sPlayer.position;
-             sShots[i].rotation = sPlayer.rotation;
-             sShots[i].acceleration = 1.f;
-             sShots[i].speed.x = cosf(sPlayer.rotation*DEG2RAD) * 250.f;
-             sShots[i].speed.y = sinf(sPlayer.rotation*DEG2RAD) * 250.f;
+            if (!sShots[i].active) {
+                sShots[i].active = true;
+                sShots[i].position = sPlayer.position;
+                sShots[i].rotation = sPlayer.rotation;
+                sShots[i].acceleration = 1.f;
+                sShots[i].speed.x = cosf(sPlayer.rotation*DEG2RAD) * 250.f;
+                sShots[i].speed.y = sinf(sPlayer.rotation*DEG2RAD) * 250.f;
 
-             PlaySound(sounds[SOUND_SHOOT]);
+                PlaySound(sounds[SOUND_SHOOT]);
 
-             break;
+                break;
             }
         }
     }
@@ -270,6 +273,10 @@ void GameUpdate(void) {
         }
     }
 
+    //Update Live Counter.
+
+
+
     //Collision between shots and asteroids
     for (int i = 0; i < MAX_SHOTS; i++) {
         if (sShots[i].active ) {
@@ -292,7 +299,7 @@ void GameUpdate(void) {
             }
         }
     }
-//Check Collison for Super Beam
+    //Check Collison for Super Beam
     if (sSuperBeam.active && !preDetonation) {
         for (int i = 0; i < MAX_ASTEROIDS; i++) {
             if (sAsteroids[i].active) {
@@ -310,18 +317,35 @@ void GameUpdate(void) {
         }
     }
 
-//Chcek for collision of player with asteroids if not just spawned in
-if (spawnInvincibility <0) {
+    //Chcek for collision of player with asteroids if not just spawned in
+    if (spawnInvincibility <0) {
 
-    // Need to add a switch statement for pulling radius image size are all the same so they have the same hit box
-    for (int i = 0; i < MAX_ASTEROIDS; ++i) {
-        float playerTexWidth = textures[sPlayer.type].width / 4; //Player divided by 4 because render texture is already divided by 4
-        float roidTexWidth = textures[sAsteroids[i].type].width;
-        if (CheckCollisionCircles(sPlayer.position,playerTexWidth,sAsteroids[i].position,roidTexWidth)) {
-            PlayerDeath();
+        // Need to add a switch statement for pulling radius image size are all the same so they have the same hit box
+        for (int i = 0; i < MAX_ASTEROIDS; ++i) {
+
+            if (sAsteroids[i].active) {
+                float playerTexWidth = textures[sPlayer.type].width / 4; //Player divided by 4 because render texture is already divided by 4
+                float roidTexWidth = textures[sAsteroids[i].type].width;
+
+                switch (sAsteroids[i].type) {
+                    case TYPE_ASTEROID_SMALL:
+                        roidTexWidth = roidTexWidth/5;
+                    break;
+                    case TYPE_ASTEROID_MED:
+                        roidTexWidth = roidTexWidth/4;
+                    case TYPE_ASTEROID_LARGE:
+                        roidTexWidth = roidTexWidth/3;
+
+                    break;
+                    default: ;
+                }
+
+                if (CheckCollisionCircles(sPlayer.position,playerTexWidth,sAsteroids[i].position,roidTexWidth)) {
+                    PlayerDeath();
+                }
+            }
         }
     }
-}
 
     if (beamCharge <= 100.f) {
         beamCharge += GetFrameTime();
@@ -333,35 +357,54 @@ if (spawnInvincibility <0) {
     if (hasActiveAsteroids() == false) {
         isGameOver = true;
     }
+}
+
+    if (isGameOver && IsKeyPressed(KEY_R)) {
+        GameReset();
+        isGameOver = false;
+    }
 
 
 }
 void GameRender(void) {
     //draw the player
-    DrawTexturePro(textures[TEXTURE_PLAYER],
+    if (spawnInvincibility>0) {
+        DrawTexturePro(textures[TEXTURE_PLAYER],
+                (Rectangle) { 0, 0, textures[TEXTURE_PLAYER].width, textures[TEXTURE_PLAYER].height },
+                (Rectangle) { sPlayer.position.x, sPlayer.position.y, textures[TEXTURE_PLAYER].width/2, textures[TEXTURE_PLAYER].height/2 },
+                (Vector2) {textures[TEXTURE_PLAYER].width/4,textures[TEXTURE_PLAYER].height/4},
+                sPlayer.rotation +90,
+                GRAY);
+
+    }else {
+
+        DrawTexturePro(textures[TEXTURE_PLAYER],
         (Rectangle) { 0, 0, textures[TEXTURE_PLAYER].width, textures[TEXTURE_PLAYER].height },
         (Rectangle) { sPlayer.position.x, sPlayer.position.y, textures[TEXTURE_PLAYER].width/2, textures[TEXTURE_PLAYER].height/2 },
         (Vector2) {textures[TEXTURE_PLAYER].width/4,textures[TEXTURE_PLAYER].height/4},
         sPlayer.rotation +90,
         RAYWHITE);
 
-    //draw basic UI
-    DrawRectangle(5,5, 250, 100, Fade(SKYBLUE,.5f));
-    DrawRectangleLines(5,5,250,100,BLUE);
-
-
-    DrawText(TextFormat("- Player Rotation: (%06.1f)",sPlayer.rotation),15,45,10,YELLOW);
-    DrawText(TextFormat("- Player Position: (%06.1f,%06.1f)",sPlayer.position.x,sPlayer.position.y),15,30,10,YELLOW);
-    DrawText(TextFormat("- Score: (%i)",asteroidScore),15,60,10,YELLOW);
-    DrawText(TextFormat("- Current Asteroids: (%i)",currentAsteroids),15,75,10,YELLOW);
-    //DrawText(TextFormat("- Beam Charge : (%f)",),15,100,10,YELLOW);
-
-
-
-    if (isGameOver) {
-        DrawText(TextFormat("Game Over"),screenWidth/2,screenHeight/2 ,30,YELLOW);
-
     }
+
+
+
+    //draw basic UI
+
+    if (showDebug) {
+        DrawRectangle(5,5, 250, 100, Fade(SKYBLUE,.5f));
+        DrawRectangleLines(5,5,250,100,BLUE);
+
+
+        DrawText(TextFormat("- Player Rotation: (%06.1f)",sPlayer.rotation),15,45,10,YELLOW);
+        DrawText(TextFormat("- Player Position: (%06.1f,%06.1f)",sPlayer.position.x,sPlayer.position.y),15,30,10,YELLOW);
+        DrawText(TextFormat("- Score: (%i)",asteroidScore),15,60,10,YELLOW);
+        DrawText(TextFormat("- Current Asteroids: (%i)",currentAsteroids),15,75,10,YELLOW);
+        //DrawText(TextFormat("- Beam Charge : (%f)",),15,100,10,YELLOW);
+    }
+
+
+
 
 
     //draw asteroids
@@ -381,6 +424,18 @@ void GameRender(void) {
     for (int i = 0; i < MAX_SHOTS; i++) {
         if (sShots[i].active) {
             DrawCircle(sShots[i].position.x, sShots[i].position.y, 2.f, RAYWHITE);
+        }
+    }
+    //Draw Lives UI
+
+    for (int i = 0; i < MAX_LIVES; i++) {
+        if (sLives[i].active) {
+            DrawTexturePro(textures[TEXTURE_PLAYER],
+        (Rectangle) { 0, 0, textures[TEXTURE_PLAYER].width, textures[TEXTURE_PLAYER].height },
+        (Rectangle) { sLives[i].position.x,sLives[i].position.y, textures[TEXTURE_PLAYER].width/2, textures[TEXTURE_PLAYER].height/2 },
+        (Vector2) {textures[TEXTURE_PLAYER].width/4,textures[TEXTURE_PLAYER].height/4},
+        sLives[i].rotation,
+        RAYWHITE);
         }
     }
 
@@ -404,6 +459,12 @@ void GameRender(void) {
     }
 
     DrawRectangleLines(400,20,100,30, WHITE);
+
+    if (isGameOver) {
+        DrawText(TextFormat("Game Over"),screenWidth/2-50,screenHeight/2 ,30,YELLOW);
+        DrawText(TextFormat("Press R to Restart"),screenWidth/2 - 50,screenHeight/2 + 30 ,20,YELLOW);
+
+    }
 }
 void GameShutdown(void) {
     for (int i = 0; i < MAX_TEXTURES; i++) {
@@ -426,6 +487,19 @@ void GameReset(void) {
     currentAsteroids = MAX_ASTEROIDS;
     beamDelay = 1.f;
     preDetonation = true;
+    lives = MAX_LIVES;
+    beamCharge = 0.f;
+
+    float livesUIX = 30;
+
+    for (int i = 0; i < lives; i++) {
+        sLives[i].active = true;
+        sLives[i].position.x = livesUIX;
+        sLives[i].position.y = 50;
+        livesUIX+= 40;
+        sLives[i].type = TYPE_PLAYER;
+
+    }
 
 
     for (int i = 0; i < SPAWN_ASTEROIDS; i++) {
@@ -503,8 +577,9 @@ void CheckAsteroidType(sEntity *entity)
 
 void PlayerDeath(void) {
     lives--;
+    sLives[lives].active = false;
 
-    if (lives < 0) {
+    if (lives <= 0) {
         isGameOver = true;
 
     } else {
@@ -577,10 +652,10 @@ void UpdateDrawFrame(void)
     //----------------------------------------------------------------------------------
     // TODO: Update variables / Implement example logic at this point
     //----------------------------------------------------------------------------------
-    if (!isGameOver) {
+
         GameUpdate();
 
-    }
+
     // Draw
     //----------------------------------------------------------------------------------
     // Render game screen to a texture, 
